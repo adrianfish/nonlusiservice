@@ -5,6 +5,7 @@
 	<bean parent="org.sakaiproject.entitybroker.entityprovider.AbstractEntityProvider" 
 		class="uk.ac.lancs.sakai.nonlusiservice.entityprovider.ModuleProvider">
 		<property name="siteService"><ref bean="org.sakaiproject.site.api.SiteService"/></property>
+		<property name="userDirectoryService"><ref bean="org.sakaiproject.user.api.UserDirectoryService"/></property>
 		<property name="developerService"><ref bean="org.sakaiproject.entitybroker.DeveloperHelperService"/></property>
 	</bean>
 </beans>
