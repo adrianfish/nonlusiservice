@@ -1,5 +1,8 @@
 package uk.ac.lancs.sakai.nonlusiservice;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class Module {
 	
 	public String id = "";
@@ -12,6 +15,7 @@ public class Module {
 	public String url = "";
 	public String moduleid = "";
 	public String yearid = "";
+	public List<Assignment> assignments = new ArrayList<Assignment>();
 	
 	public Module() {
 	}

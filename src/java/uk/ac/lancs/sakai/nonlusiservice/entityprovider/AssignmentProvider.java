@@ -24,7 +24,7 @@ import org.sakaiproject.user.api.UserNotDefinedException;
 
 import uk.ac.lancs.sakai.nonlusiservice.Module;
 
-public class ModuleProvider extends AbstractEntityProvider implements CoreEntityProvider, AutoRegisterEntityProvider, Outputable, CollectionResolvable {
+public class AssignmentProvider extends AbstractEntityProvider implements CoreEntityProvider, AutoRegisterEntityProvider, Outputable, CollectionResolvable {
 
 	private SiteService siteService;
 	public void setSiteService(SiteService siteService) {
@@ -41,7 +41,7 @@ public class ModuleProvider extends AbstractEntityProvider implements CoreEntity
 		this.developerService = developerService;
 	}
 
-	public final static String ENTITY_PREFIX = "non-lusi-modules";
+	public final static String ENTITY_PREFIX = "non-lusi-assignments";
 
 	public boolean entityExists(String id) {
         return true;
@@ -67,9 +67,9 @@ public class ModuleProvider extends AbstractEntityProvider implements CoreEntity
 		
 		List<Module> modules = new ArrayList<Module>();
 		
-		Map<String,String> criteria = new HashMap<String,String>(1);
         // Spinoff sites like the MKTG ones have this property set to distinguish
-        // them from the main LUSI controlled ones.
+        // them from the main LUSI controlled ones. This is how we identify them.
+		Map<String,String> criteria = new HashMap<String,String>(1);
 		criteria.put("from-lusi", "no");
 		
 		List<Site> sites = new ArrayList<Site>();
